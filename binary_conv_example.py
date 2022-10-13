@@ -82,6 +82,7 @@ print(f"Converted {incoming_int_as_string} to {binary_string}")
 # next bit is ‘1’ and 2**1 * 1 is 2. Sum is 2
 # next bit is ‘0’ and 2**2 * 0 is 0. Sum is 2
 # next bit (first bit) is ‘1’ and 2**3 * 1 is 8. Sum is 10
+
 binary_string = input('Give me a binary string: ')
 for character in binary_string:
     if character not in ('1', '0'):
@@ -101,6 +102,7 @@ while len(temporary_binary_string) > 0:
 
 print(f"I converted binary {binary_string} to {answer}")
 
-# To convert to other base e.g. hex (base 16) create string with valid ssymbols
-base_string = "0123456789abcdef"
-# change base to a variable (16) -> it's 2 at the moment
+# To convert to other base e.g. hex (base 16) create string with valid symbols and change base to a variable (16) ->
+# it's 2 at the moment. 
+# base_string = "0123456789abcdef"
+# base = 16

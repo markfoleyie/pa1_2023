@@ -19,8 +19,8 @@ while number <= top_num:
     sum_of_divisors = 0
     while divisor < number:
         if number % divisor == 0:
-            sum_of_divisors = sum_of_divisors + divisor
-        divisor = divisor + 1
+            sum_of_divisors += divisor
+        divisor += 1
     # classify the number based on its divisor sum
     if number == sum_of_divisors:
         print(f"{number} is perfect")

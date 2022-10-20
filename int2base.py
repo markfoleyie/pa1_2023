@@ -105,8 +105,8 @@ def is_valid_base(my_base):
 # Make sure that both are in valid ranges - int must be a valid number and base 
 # must be between 2 & 16
 
-optionStr = ""
-while optionStr != "0":
+option_str = ""
+while option_str != "0":
     print("\nInteger to Base Converter")
     print("-------------------------")
     print("Choose an option")
@@ -114,14 +114,14 @@ while optionStr != "0":
     print("Enter 2 Convert from base x to decimal")
     print("Enter 0 to exit the program")
 
-    optionStr = input("Enter your choice now: ")
-    if (len(optionStr) != 1) or (optionStr not in "012"):
+    option_str = input("Enter your choice now: ")
+    if (len(option_str) != 1) or (option_str not in "012"):
         print("Error: You must enter a valid choice")
 
     #
     # This section handles Int to Base x
     #
-    elif optionStr == "1":  # Int to Base selected ...
+    elif option_str == "1":  # Int to Base selected ...
         int_str = input('Give me an integer to convert: ')
 
         if not int_str.isdigit():  # Invalid integer?
@@ -146,7 +146,7 @@ while optionStr != "0":
     #
     # This section handles Base x to Int
     #
-    elif optionStr == "2":
+    elif option_str == "2":
         base_str = input('Give me a string to convert: ')
         for char in base_str:
             if char not in BASE_DIGITS:
@@ -169,7 +169,7 @@ while optionStr != "0":
     #
     # This section causes you to exit
     #
-    elif optionStr == "0":
+    elif option_str == "0":
         print("\nExiting ... Goodbye!")
 
     #

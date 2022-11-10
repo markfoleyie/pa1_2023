@@ -22,7 +22,7 @@ def encrypt(data, shift_key):
 
 def write_encrypted_file(encrypted_file):
     """
-    Writes a file 'temp_encrypted' to the '.cache' directory. Not the leading dot, this indicates a hidden directory. I
+    Writes a file 'temp_encrypted' to the '.cache' directory. Note the leading dot, this indicates a hidden directory. I
     use this scheme for temp or 'sacrificial' directories.
 
     :param encrypted_file: Encrypted text

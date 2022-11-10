@@ -24,7 +24,9 @@ king of clubs, The last column is the rank
 # 1. Open file for reading
 
 try:
-    poker_file = open("poker-hand-testing.data", 'r')
+    with open("poker-hand-testing.data", 'r') as fh:
+        poker_file = fh.read()
+        poker_file = poker_file.split("\n")
 except IOError as e:
     print(e)
     quit()

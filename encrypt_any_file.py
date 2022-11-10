@@ -4,6 +4,14 @@ SEPARATOR_LINE = f"\n{'=' * 80}\n"
 
 
 def encrypt(data, shift_key):
+    """
+    Takes any set of data which can be represented as text, encrypts it by reading the ordinal number of each character
+    adding the shift key to this and couputting the character for that new ordinal value.
+
+    :param data: Incoming text
+    :param shift_key: Value (int) by which to increase each char
+    :return: Encrypted text
+    """
     encrypted_data = ""
 
     for char in data:
@@ -13,6 +21,13 @@ def encrypt(data, shift_key):
 
 
 def write_encrypted_file(encrypted_file):
+    """
+    Writes a file 'temp_encrypted' to the '.cache' directory. Not the leading dot, this indicates a hidden directory. I
+    use this scheme for temp or 'sacrificial' directories.
+
+    :param encrypted_file: Encrypted text
+    :return: None
+    """
     with open(".cache/temp_encrypted", "w") as fh:
         fh.write(encrypted_file)
 

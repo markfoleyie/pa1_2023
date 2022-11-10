@@ -32,6 +32,13 @@ ALLOWED_CONTENT_TYPES = ("application/x-httpd-php", "text/plain", "text/html")
 
 
 def print_error_and_exit(error, return_code):
+    """
+    Should be obvious from the function name.
+
+    :param error:
+    :param return_code:
+    :return: None
+    """
     print(f"{'=' * 50}\nSomething bad happened.\n{error}\n{'=' * 50}")
     quit(return_code)
 
@@ -41,7 +48,7 @@ def get_file_from_net(url):
     Gets any file from the net and prints it if possible (i.e if Content-Type is text.
 
     :param url: Address of resource to be read
-    :return: Text of possible, otherwise throw exception.
+    :return: Text if possible, otherwise throw exception.
     """
 
     try:
@@ -76,6 +83,12 @@ def read_any_file(file_name):
 
 
 def print_content(content):
+    """
+    No explanation necessary
+
+    :param content:
+    :return: None
+    """
     print(f"Content is\n{'=' * 50}\n{content}")
 
 

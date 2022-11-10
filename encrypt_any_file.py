@@ -6,7 +6,7 @@ SEPARATOR_LINE = f"\n{'=' * 80}\n"
 def encrypt(data, shift_key):
     """
     Takes any set of data which can be represented as text, encrypts it by reading the ordinal number of each character
-    adding the shift key to this and couputting the character for that new ordinal value.
+    adding the shift key to this and computing the character for that new ordinal value.
 
     :param data: Incoming text
     :param shift_key: Value (int) by which to increase each char

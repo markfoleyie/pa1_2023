@@ -21,47 +21,52 @@ In our example above the first line represents the hand, 2 of spades, ace of spa
 king of clubs, The last column is the rank
 """
 
-# 1. Open file for reading
 
-try:
-    with open("poker-hand-testing.data", 'r') as fh:
-        poker_file = fh.read()
-        poker_file = poker_file.split("\n")
-except IOError as e:
-    print(e)
-    quit()
+def main():
+    # 1. Open file for reading
 
-# 2. Create and initialize variables to hold the counts
-
-total_count = 0
-rank_counts = {}
-rank_list = ['nothing', 'pair', 'two pair', 'three of a kind', 'straight', 'flush', 'full house', 'four of a kind',
-             'straight flush', 'royal flush']
-
-
-# 3. Loop through each line of the file
-
-for line in poker_file:
-    # At each line increment the counter
-    total_count += 1
-
-    # Get hand rank: split on comma, get last item as int
     try:
-        hand_rank = int(line.split(',')[-1])
-    except ValueError as e:
+        with open("poker-hand-testing.data", 'r') as fh:
+            poker_file = fh.read()
+            poker_file = poker_file.split("\n")
+    except IOError as e:
         print(e)
-        continue
+        quit()
 
-    # If rank already in dictionary, increment it otherwise add it and set to 1
-    if hand_rank in rank_counts:
-        rank_counts[hand_rank] += 1
-    else:
-        rank_counts[hand_rank] = 1
+    # 2. Create and initialize variables to hold the counts
 
-# 4. Print the results
+    total_count = 0
+    rank_counts = {}
+    rank_list = ['nothing', 'pair', 'two pair', 'three of a kind', 'straight', 'flush', 'full house', 'four of a kind',
+                 'straight flush', 'royal flush']
 
-print(f"Total hands in file: {total_count:,d}")
-print("Count and probability of hands:")
+    # 3. Loop through each line of the file
 
-for i in range(10):
-    print(f"  {rank_list[i]:18s}:{rank_counts[i]:10,d}{rank_counts[i] / total_count:10.4%}")
+    for line in poker_file:
+        # Get hand rank: split on comma, get last item as int
+        try:
+            hand_rank = int(line.split(',')[-1])
+
+            # At each valid line increment the counter
+            total_count += 1
+        except ValueError as e:
+            print(e)
+            continue
+
+        # If rank already in dictionary, increment it otherwise add it and set to 1
+        if hand_rank in rank_counts:
+            rank_counts[hand_rank] += 1
+        else:
+            rank_counts[hand_rank] = 1
+
+    # 4. Print the results
+
+    print(f"Total hands in file: {total_count:,d}")
+    print("Count and probability of hands:")
+
+    for i in range(10):
+        print(f"  {rank_list[i]:18s}:{rank_counts[i]:10,d}{rank_counts[i] / total_count:10.4%}")
+
+
+if __name__ == "__main__":
+    main()
